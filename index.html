@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="footer.css">
+
+  <style>body {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #3b3939;
+  }
+  
+  .loader-container {
+    text-align: center;
+  }
+  
+  .loader {
+    width: 100px; /* Set the initial width of the loader */
+    height: 100px; /* Set the initial height of the loader */
+    background-image: url('dd.jpg'); /* Replace with the path to your image */
+    background-size: contain; /* Make the image responsive by scaling it to fit within the dimensions */
+/*ANI MATION BO ZVRINA WENAY*/
+    /*animation: rotate 1.4s infinite linear;*/
+border-radius: 50px;
+/*ANI MATION BO BCHOK BON MAZIN BONA WENAY*/
+
+    animation: bounce 1.4s infinite ease-in-out both;
+
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1);
+    }
+  }
+  </style>
+  <title>loading</title>
+</head>
+<body>
+  <!-- LODING BO PESHAKYA WEBSITE -->
+
+<div class="loader-container">
+  <div class="loader"></div>
+</div>
+<script>
+/*bo mawake bchita d pageke dida!*/
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Simulate loading delay (you can replace this with your actual loading logic)
+  setTimeout(function() {
+    // Redirect to another page
+    window.location.href = "home.html";
+  }, 5000); // Adjust the time as needed
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,577 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+  <title>Responsive Minibar</title>
+<!--aw animation ye daspeke hami aw-->
+  <link rel="stylesheet" href="animationfirst.css">
+  <!--dumahiya wepsite ma-->
+  <link rel="stylesheet" href="footer.css">
+
+  <style>
+        /* bodya wepsite ma  */
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+        /* aw hedare sare  */
+
+    header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            transform: translateY(10px);
+      animation: fadeInUp 1.5s ease-out forwards;
+
+        }
+
+    .navbar {
+      background-color: #333;
+      overflow: hidden;
+      text-align: center;
+      
+   
+
+    }
+
+    .navbar a {
+      float:left;
+      display:flex;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      transform: translateY(10px);
+      animation: fadeInUp 1.5s ease-out forwards;
+     
+    }
+
+    .navbar a:hover {
+      background-color: #242121e3;
+      color: rgb(255, 255, 255);
+      border-radius: 12%;
+      
+    }
+    /* ?////   */
+
+    .navbar .icon {
+      display: none;
+      float: right;
+    }
+    /* aw slide show yen tumatici   */
+
+
+    .exhibit {
+            margin: 1em;
+            padding: 1em;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+               transform: translateY(10px);
+      animation: fadeInUp 1.5s ease-in-out;
+        }
+
+        #slideshow {
+            max-width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #slideshow img {
+            width: 100%;
+            height: auto;
+            display: none;
+            animation: zoomIn 0.8s forwards;
+            transition: transform 0.6s;
+        }
+
+        #slideshow img.active {
+            display: block;
+        }
+        .bottom-bar {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  font-size: 24px;
+  padding: 10px;
+}
+
+
+
+main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+            opacity: 0;
+            animation: fadeIn 6s forwards;
+        }
+    /* aw paragraphen ma hayn   */
+
+        .article {
+            width: calc(33.33% - 30px);
+            margin: 15px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+            opacity: 0;
+            animation: zoomIn 0.5s forwards;
+            transition: transform 0.3s;
+        }
+
+        .article:hover {
+            transform: scale(1.05);
+        }
+
+        .article img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .article h2 {
+            padding: 15px;
+            margin: 0;
+            font-size: 1.2em;
+             transform: translateY(10px);
+      animation: fadeInUp 1.5s ease-out forwards;
+
+        }
+
+        .article p {
+            padding: 0 15px 15px;
+            margin: -10x;
+            font-size: 18px;
+            color: #000000;
+            justify-content: center;
+            text-align: left;
+        }
+
+
+/* Apply basic styles to the text container */
+.text-container {
+    max-width: 700px; /* Adjust the maximum width as needed */
+    margin: 10px auto;
+    padding: 0 10px;
+    font-size: 20;
+
+}
+
+/* Define styles for the responsive text */
+.responsive-text {
+    font-size: 20px; /* Set a base font size */
+    line-height: 1.6; /* Adjust line height for readability */
+}
+
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(1);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+/*animation for text heding*/
+        @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+
+    
+       /* aw wenayen wak albome pash o pesh dchin */
+
+        .slideshow-container {
+      max-width: 100%;
+      position: relative;
+      margin: auto;
+    }
+
+    .mySlides {
+      display: none;
+      width: 100%;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+    /* aw harduk boton en ma    */
+
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      cursor: pointer;
+      user-select: none;
+      background-color: #333;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .prev {
+      left: 10px;
+    }
+
+    .next {
+    
+      right: 10px;
+
+    }
+
+    .prev:hover, .next:hover {
+      background-color: #555;
+    }
+
+    @media screen and (max-width: 600px) {
+      .navbar a:not(.icon) {
+        display: none;
+        font-size: 14px;
+      }
+    /* icone navbare bla laye raste darkawet*/
+
+      .navbar a.icon {
+        float: right;
+        display: block;
+      }
+
+      .navbar.responsive a, .navbar.responsive a.icon {
+        display: block;
+        text-align: left;
+      }
+
+      .bottom-bar {
+    font-size: 14px;
+  }
+
+
+
+  .article {
+                width: calc(80% - 30px);
+              
+            }
+
+                /* Adjust font size for smaller screens */
+    .responsive-text {
+        font-size: 14px;
+    }
+
+        }
+
+        @media (max-width: 480px) {
+            .article {
+                width: 100%;
+            }
+    }
+  </style>
+</head>
+<body>
+    <header>
+        <!--nave sare  -->
+
+        <h1>School Museum Erbil</h1>
+          <!-- pegotnak -->
+        <p>Welcome To a School Museum Erbil</p>
+    </header>
+<!-- AW MINU-BARE-SARE-->
+<div class="navbar" id="myNavbar">
+  <a href="#home">Home</a>
+  <a href="#About">About Us</a>
+  <a href="#Exhibit">Exhibit</a>
+  <a href="#Contact">Contact</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    &#9776; <!-- Hamburger icon -->
+  </a>
+</div>
+  <!-- aw animation a daspeke "home" -->
+
+<div id="anu">
+  <nav>
+      <picture>
+        <img src="4.jpg" alt="mushroom" width="400" height="200">
+      </picture>
+      <nav></nav>
+      <nav></nav>
+      
+    </nav>
+  </div>
+
+  <!-- aw wenayen outomatice dhena gohrin  -->
+
+<div class="exhibit">
+  <h2></h2>
+  <div id="slideshow">
+      <img class="active" src="1.jpg" alt="Exhibit Image 1">
+      <img src="2.jpg" alt="Exhibit Image 2">
+      <img src="3.jpg" alt="Exhibit Image 3">
+  </div>
+</div>
+
+
+
+<main>
+  <!-- darbaray damazrana qutabxane -->
+
+
+  <div class="article">
+      <img src="1.jpg" alt="Article Image 1">
+      <h2>The School Establishing</h2>
+      <p>The school was established in 1928 during the reign of King Faisal I at the request of the people of the castle in the city of Erbil. Mr. Ahmad Naji addressed the founder of the school with a letter in which he wrote about the desire of the people of the city to build and establish a school of their own. Construction on the school began in 1924 and it opened its doors to receive students in 1928. This was the case until 2004 and it was named after Erbil First Primary School. After the school closed its doors to receive students, the idea of converting it into an educational museum arose by Professor Ismail Al-Barzanji in 2012 after a hiatus that lasted eight years. Then the government in the Kurdistan Region approved the opening of this project as an educational museum and archive of its kind, the first in Iraq and the Middle East. Officially, visitors were received on March 19, 2014, under the supervision of Mr. Ismail and then Mr. Omid Anwar Al-Barzanji at the present time.</p>
+  </div>
+
+    <!-- darbaray binaye mozaxane  -->
+
+  <div class="article">
+      <img src="2.jpg" alt="Article Image 2">
+      <h2>The Educational Museum Building</h2>
+      <p>The Educational Museum building consists of two floors, with an area of 835 square metres. The ground floor includes five exhibition halls, as well as the first floor, six exhibition halls. Each hall was established under the name of one of the pioneers of education in the city of Erbil who learned and studied in this school. The building includes green spaces at the main entrance, including a statue of Professor Ibrahim Amin in the house, the author of the primary curriculum books, namely ABC, the Kurdish language, and the new arithmetic, 1957, before the declaration of the Iraqi Republic.
+        The museum building is represented by its heritage and local architecture with an Islamic style through its Abbasid arches and brick and brick building materials. It is distinguished by its semi-enclosed courtyard and stained glass windows overlooking the central square of the museum.
+        </p>
+  </div>
+
+ <!-- darbaray binyat nana qutabxane -->
+  <div class="article">
+    <img src="1.jpg" alt="Article Image 1">
+    <h2>Ground Floor</h2>
+<ol>
+  <li> Abdullah Aziz Hall, one of the principals of the First Erbil School in 1932 and the author of the book Health and Things at the Level of Iraq.</li>
+<li>Ahmed Naji Hall. He was one of the directors of the first Erbil school and the building supervisor at the time from 1928-1930. He was the founder of the idea of establishing the school.</li>
+<li>Ezzedine Faydi Hall, one of the school’s principals, a writer and a prominent political figure at the time, 1963</li>
+<li>Abdel Wahed Morgan is a teacher and student who graduated from the same school and then became one of the pioneers of art education (music, acting, drawing) in the 1970s.</li>
+<li>Musa Khalil, one of the school’s teachers, had a major role in teaching spelling in the 1950s.</li>
+<li>Iskandar Othman graduated and worked and studied in the same school, and he was one of the pioneers of plastic arts at that time in the seventies of the last century.</li>
+</ol>
+</div>
+
+
+<!-- darbaray binyat nana qutabxane ya gre daya dgal ya sarii -->
+
+<div class="article">
+  <img src="1.jpg" alt="Article Image 1">
+  <h2>First Floor </h2>
+<ol>
+<li>Ali Hammadi, the sports teacher, played a major role in the school’s sports championships in the 1960s.</li>
+<li>Martyrs’ Hall (Khairallah Abdul Karim), which includes professors and teachers who were martyred in the events of the Kurdistan Freedom March in the last century.</li>
+<li>Mustafa Shaaban, the teacher of generations in the fifties and sixties of the last century, is a well-known historical and political figure. It is noteworthy that he taught famous political figures in that period.</li>
+<li>Ismail Sarhang, a science class teacher, was passionate about raising plants and flowers, and he had a great role in exploring many wild plants and natural flowers in the Kurdistan Region.</li>
+<li> Shukriya Jiawk, the first teacher in Erbil in 1936, had a major role in encouraging many girls to join the school</li>
+<li>Daniel Qassab, one of the art education teachers at the school in the 1930s and 1940s. He is of the Jewish faith and lives in Erbil. The fine art movement was founded by him in Erbil.</li>
+<li>Khader Mouloud was one of the most prominent school principals in the mid-1960s to the 1970s. He had a prominent role in developing the school, the most important of which was establishing the school cinema room</li>
+</ol>
+</div>
+
+  <!-- aw hame wena yen mozaxane -->
+
+</main>
+
+
+<div class="slideshow-container">
+  <div class="mySlides">
+    <img src="4.jpg" alt="Slide 1">
+  </div>
+
+  <div class="mySlides">
+    <img src="2.jpg" alt="Slide 2">
+  </div>
+
+  <div class="mySlides">
+    <img src="3.jpg" alt="Slide 3">
+  </div>
+  <div class="mySlides">
+    <img src="1.jpg" alt="Slide 3">
+  </div>
+  <div class="mySlides">
+    <img src="3.jpg" alt="Slide 3">
+  </div>
+  <div class="mySlides">
+    <img src="5.jpg" alt="Slide 3">
+  </div>
+  <div class="mySlides">
+    <img src="6.jpg" alt="Slide 3">
+  </div>
+  <div class="mySlides">
+    <img src="7.jpg" alt="Slide 3">
+  </div>
+  <div class="mySlides">
+    <img src="8.jpg" alt="Slide 3">
+  </div>
+  <div class="mySlides">
+    <img src="9.jpg" alt="Slide 3">
+  </div>
+  <div class="mySlides">
+    <img src="10.jpg" alt="Slide 3">
+  </div>
+  <div class="mySlides">
+    <img src="11.jpg" alt="Slide 3">
+  </div>
+  <div class="mySlides">
+    <img src="12.jpg" alt="Slide 3">
+  </div>
+  <div class="mySlides">
+    <img src="13.jpg" alt="Slide 3">
+  </div>
+  <div class="mySlides">
+    <img src="14.jpg" alt="Slide 3">
+  </div>
+
+  <!-- Add more slides as needed -->
+    <!--gohrina wenayan pesh o pash-->
+
+
+  <button class="prev" onclick="plusSlides(-1)">❮</button>
+  <button class="next" onclick="plusSlides(1)">❯</button>
+</div>
+<main>
+  <!--navo nishane mozaxane-->
+
+  <div class="text-container">
+    <h1>The Museum Location</h1>
+    <p class="responsive-text">The museum is located in the heart of the city of Erbil, in the historical area, the Tajil neighborhood, near the historic Erbil Citadel, surrounded by the heritage markets area, and close to the retirement center in Erbil. </p>
+</div>
+  <!-- inana map bo sar website -->
+
+<section id="location">
+    <div id="map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19298.
+      550716460075!2d44.037282270113636!3d36.18943948556287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.
+      1!3m3!1m2!1s0x400722544452b27f%3A0xb9e100edf59e88ac!2sCitadel%20of%
+      20Erbil!5e0!3m2!1sar!2siq!4v1700330688290!5m2!1sar!2siq"
+       width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+</section>
+
+</main>
+
+  <!-- bine wepsite ma  -->
+
+<footer class="bottom-bar">
+
+  <div class="footer-section">
+    <h2>School Museum Erbil</h2>
+    <nav>
+        <a href="#Home">Home</a>
+        <a href="#Exhibit">Exhibit</a>
+        <a href="#About">About Us</a>
+        <a href="#Contact">Contact</a>
+
+    </nav>
+</div>
+
+<div class="footer-section">
+    <h2>Social Media</h2>
+    <div class="social-icons">
+        <a href="#" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+        <a href="#" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+        <a href="#" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+    </div>
+</div>
+
+<div class="footer-section">
+    <h2>Contact Us</h2>
+    <p>Email: nawzadharke4@gmail.com</p>
+    <p>Phone: +964 (751) 158-6247</p>
+</div>
+
+
+  <p>&copy; 2023 School Museum Erbil. All rights reserved.</p>
+</footer>
+
+
+
+
+
+  <!-- java bo hindak j awen sare -->
+
+<script>
+    /* java  bo navbara we co darkavet! o naminet! */
+
+  function myFunction() {
+    const x = document.getElementById("myNavbar");
+    if (x.className === "navbar") {
+      x.className += " responsive";
+    } else {
+      x.className = "navbar";
+    }
+  }
+
+
+    // JavaScript for the image slideshow
+    //java bo wan wenayan awen tamatik dhena gorin
+    let currentIndex = 0;
+        const images = document.querySelectorAll('#slideshow img');
+
+        function showImage(index) {
+            images.forEach((image, i) => {
+                image.classList.toggle('active', i === index);
+            });
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        }
+
+        // Change image every 3 seconds
+        setInterval(nextImage, 3000);
+
+
+
+        let slideIndex = 1;
+  showSlides(slideIndex);
+
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    let i;
+    const slides = document.getElementsByClassName("mySlides");
+
+    if (n > slides.length) {
+      slideIndex = 1;
+    }
+
+    if (n < 1) {
+      slideIndex = slides.length;
+    }
+
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+
+    slides[slideIndex - 1].style.display = "block";
+  }
+</script>
+
+</body>
+</html>
